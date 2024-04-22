@@ -32,7 +32,14 @@ function Registration() {
                   //   value={inputValues.accountnumber}
                   //   onChange={handleChange}
                   type="text"
+                  pattern="[a-zA-Z]+"
                   placeholder="Enter your full name"
+                  onChange={(event) => {
+                    event.target.value = event.target.value.replace(
+                      /[^a-zA-Z]/g,
+                      ""
+                    );
+                  }}
                 />
               </div>
               <p className="mt-1 pl-2 text-xs text-red-600">
